@@ -10,7 +10,7 @@ Werkzeug==0.15.5
 appdirs==1.4.3
 click==7.1.2
 distlib==0.3.0
-Joblib==0.15.1
+Joblib==1.0.0
 python-dateutil==2.8.1
 pytz==2019.3
 six==1.14.0
