@@ -3,7 +3,7 @@ scikit-learn~=1.1.2
 gunicorn~=20.1.0
 Flask~=2.2.2
 Flask-Cors~=3.0.10
-itsdangerous==1.1.0
+itsdangerous>=2.0
 Jinja2==3.0
 MarkupSafe>=2.0.0rc2
 Werkzeug==0.15.5
