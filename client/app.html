@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Moscow Flat Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="img"></div>
+<form class="form">
+	<h2>Total Area (Square Meter)</h2>
+    <input class="area_total"  type="text" id="uiSqmt" name="area_total" value="1000">
+	<h2>Kitchen Area (Square Meter)</h2>
+    <input class="kitchen_area"  type="text" id="uiKitchSqmt" name="kitchen_area" value="100">
+	<h2>Number Of Floors In The Building</h2>
+	<input class="floors_total" type="text" id="uiFloors" name="floors_total" value="10">
+	<h2>Desired Floor</h2>
+	<input class="floor_number" type="text" id="uiFloorDes" name="floor_number" value="10">
+	</form>
+<form class="form">
+	<h2>Material</h2>
+	<div>
+    <select class="material" name="" id="uiMaterials">
+       <option value="" disabled="disabled" selected="selected">Choose a Material</option>
+		  <option>Blok</option>
+          <option>Wood</option>
+    </select>
+	</div>
+	<h2>Location</h2>
+	<div>
+    <select class="location" name="" id="uiLocations">
+    <option value="" disabled="disabled" selected="selected">Choose a Location</option>
+		<option>Tverskaya street</option>
+        <option>Rayasanskyi avenue</option>
+	</select>
+    </div>
+	<button class="submit" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+	<div id="uiEstimatedPrice" class="result">  	<h2></h2></div>
+</form>
+</body>
+</html>
