@@ -8,7 +8,7 @@ Jinja2==2.10.1
 MarkupSafe==1.1.1
 Werkzeug==0.15.5
 appdirs==1.4.3
-click==7.1.2
+click==8.0
 distlib==0.3.0
 Joblib==1.0.0
 python-dateutil==2.8.1
