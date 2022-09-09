@@ -1,5 +1,5 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS, cross_origin
 import util
 import gunicorn
 
@@ -35,24 +35,31 @@ def get_data_columns():
 
     return response
 
+@app.route("/")
+@cross_origin()
+def home():
+    return render_template("app.html")
+
 
 @app.route('/predict_home_price/', methods=['GET', 'POST'])
 def predict_home_price():
-    material = request.form['material']
-    floor_number = int(request.form['floor_number'])
-    floors_total = int(request.form['floors_total'])
-    area_total = float(request.form['area_total'])
-    kitchen_area = float(request.form['kitchen_area'])
-    location = request.form['location']
+    if request.method == "POST":
+        material = request.form['material']
+        floor_number = int(request.form['floor_number'])
+        floors_total = int(request.form['floors_total'])
+        area_total = float(request.form['area_total'])
+        kitchen_area = float(request.form['kitchen_area'])
+        location = request.form['location']
 
-    response = jsonify({'estimated_price': util.get_estimated_price(material, floor_number, floors_total,
+        response = jsonify({'estimated_price': util.get_estimated_price(material, floor_number, floors_total,
                                                                     area_total, kitchen_area, location)})
-    #response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add_header('Access-Control-Allow-Origin','*')
-    return response
+        #response.headers.add('Access-Control-Allow-Origin', '*')
+        #response.headers.add_header('Access-Control-Allow-Origin','*')
+        return render_template("app.html", prediction_text="The house price is {} Rub.".format(response))
+    return render_template("app.html")
 
 
 if __name__ == "__main__":
     print("Starting Python Flask Server For Home Price Prediction...")
     util.load_saved_artifacts()
-    app.run()
+    app.run(debug = True)
