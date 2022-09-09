@@ -47,14 +47,14 @@ def load_saved_artifacts():
     global __locations
     global __materials
 
-    with open("./artifacts/columns.json", 'r') as f:
+    with open("columns.json", 'r') as f:
         __data_columns = json.load(f)['data_columns']
         __locations = __data_columns[12:]
         __materials = __data_columns[4:11]
 
 
     global __model
-    with open("./artifacts/moscow_home_prices_lasso_model.pickle",'rb') as f:
+    with open("moscow_home_prices_lasso_model.pickle",'rb') as f:
         __model = pickle.load(f)
     print("loading saved artifacts ... done")
 
