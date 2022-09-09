@@ -9,8 +9,8 @@ function onClickedEstimatePrice() {
   var material = document.getElementById("uiMaterials");
   var estPrice = document.getElementById("uiEstimatedPrice");
 
-  var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx
-  //var url = "/api/predict_home_price/"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  //var url = "http://127.0.0.1:5000/predict_home_price"; //Use this if you are NOT using nginx
+  var url = "/api/predict_home_price/"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
   var data = {
     area_total:parseFloat(area_total.value),
     kitchen_area:parseFloat(kitchen_area.value),
@@ -38,8 +38,8 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
   console.log( "document loaded" );
-  var url_1 = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx
-  //var url_1 = "/api/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  //var url_1 = "http://127.0.0.1:5000/get_location_names"; // Use this if you are NOT using nginx
+  var url_1 = "/api/get_location_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
   $.get(url_1,function(data, status) {
       console.log("got response for get_location_names request");
       if(data) {
@@ -52,8 +52,8 @@ function onPageLoad() {
           }
       }
   });
-  var url_2 = "http://127.0.0.1:5000/get_material_names"; // Use this if you are NOT using nginx
-  //var url_2 = "/api/get_material_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
+  //var url_2 = "http://127.0.0.1:5000/get_material_names"; // Use this if you are NOT using nginx
+  var url_2 = "/api/get_material_names"; // Use this if  you are using nginx. i.e tutorial 8 and onwards
   $.get(url_2,function(data, status) {
       console.log("got response for get_material_names request");
       if(data) {
