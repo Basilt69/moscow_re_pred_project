@@ -9,4 +9,3 @@ MarkupSafe>=2.0.0rc2
 Werkzeug>=2.2.2
 Joblib==1.0.0
 pandas==1.0.1
-virtualenv==20.0.7
